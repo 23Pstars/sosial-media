@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  web:
+    container_name: cilsy-web
+    image: 23pstars/sosmed-web:${GIT_COMMIT_SHORT}
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+  db:
+    container_name: cilsy-db
+    image: 23pstars/sosmed-db:${GIT_COMMIT_SHORT}
